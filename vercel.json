@@ -40,7 +40,7 @@
         },
         {
           "key": "X-Robots-Tag",
-          "value": "noindex, nofollow"
+          "value": "all, index, follow"
         }
       ]
     },
