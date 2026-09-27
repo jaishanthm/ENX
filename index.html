@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mitsuha SnowAngel (@mitsuhasnowangel1) | Security Researcher & Engineer</title>
+  <meta name="description" content="Portfolio of Mitsuha SnowAngel (@mitsuhasnowangel1) - Offensive Security Researcher, Application Security Engineer, Bug Bounty Hunter, and CTF Champion.">
+  <meta name="keywords" content="mitsuhasnowangel1, Mitsuha SnowAngel, cybersecurity, offensive security, bug bounty, CTF, resume">
+  <meta property="og:title" content="Mitsuha SnowAngel - Offensive Security & Systems Engineer">
+  <meta property="og:description" content="Explore cybersecurity research, exploits, tooling, and portfolio of Mitsuha SnowAngel (@mitsuhasnowangel1).">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon SVG -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>❄️</text></svg>">
+
+  <!-- Pure Static CSS Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Ambient Dynamic Canvas & Aurora Effects -->
+  <canvas id="snow-canvas"></canvas>
+  <div class="aurora-layer" aria-hidden="true">
+    <div class="aurora-blob aurora-1"></div>
+    <div class="aurora-blob aurora-2"></div>
+    <div class="aurora-blob aurora-3"></div>
+  </div>
+
+  <div class="content-wrapper">
+    <!-- Navigation Bar -->
+    <header class="site-nav">
+      <div class="container nav-container">
+        <a href="#hero" class="brand-logo">
+          <div class="brand-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2v20M2 12h20M4.93 4.93l14.14 14.14M4.93 19.07l14.14-14.14"/>
+            </svg>
+          </div>
+          <div>
+            <span>Mitsuha</span>
+            <span class="brand-alias">@mitsuhasnowangel1</span>
+          </div>
+        </a>
+
+        <ul class="nav-menu">
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#ctf" class="nav-link">CTF & Flag</a></li>
+          <li><a href="#resume" class="nav-link">Resume</a></li>
+          <li><a href="#terminal" class="nav-link">Terminal</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <button id="toggle-snow-btn" class="icon-btn" title="Toggle Snow Particles" aria-label="Toggle Snow Particles">
+            ❄️
+          </button>
+          <button class="btn btn-primary btn-sm btn-resume-hint" title="Get Resume">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+            </svg>
+            Download CV
+          </button>
+          <button class="mobile-toggle icon-btn" aria-label="Toggle navigation menu">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero Section -->
+      <section id="hero" class="hero-section">
+        <div class="container">
+          <div class="hero-grid">
+            <div class="hero-text-content">
+              <div class="hero-badge">
+                <span class="status-pulse"></span>
+                <span>STATUS: ACTIVE // SECURITY RESEARCHER & RED TEAMER</span>
+              </div>
+
+              <h1 class="hero-title">
+                Hi, I'm <span class="gradient-text">Mitsuha SnowAngel</span>
+              </h1>
+              <div class="hero-handle">@mitsuhasnowangel1</div>
+
+              <div class="hero-typewriter">
+                <span class="prompt-char">&gt;</span>
+                <span id="typed-text"></span>
+                <span class="typing-cursor"></span>
+              </div>
+
+              <p class="hero-bio">
+                Specializing in Application Security, offensive exploitation, zero-day research, and modern cloud architecture. Dedicated to dissecting complex systems, exposing critical vulnerabilities before adversaries do, and engineering bulletproof digital infrastructure.
+              </p>
+
+              <div class="hero-actions">
+                <button class="btn btn-primary btn-resume-hint">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                    <polyline points="14 2 14 8 20 8"></polyline>
+                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                    <polyline points="10 9 9 9 8 9"></polyline>
+                  </svg>
+                  View Official Resume
+                </button>
+                <a href="#projects" class="btn btn-outline">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                    <polyline points="2 17 12 22 22 17"></polyline>
+                    <polyline points="2 12 12 17 22 12"></polyline>
+                  </svg>
+                  Explore Projects
+                </a>
+                <a href="#terminal" class="btn btn-outline">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="4 17 10 11 4 5"></polyline>
+                    <line x1="12" y1="19" x2="20" y2="19"></line>
+                  </svg>
+                  Console
+                </a>
+              </div>
+
+              <!-- Flag / Resume Access Banner -->
+              <div class="hero-flag-banner">
+                <div class="flag-info">
+                  <span class="flag-label">Official Challenge Flag</span>
+                  <span class="flag-sub">Hidden inside the verified PDF resume</span>
+                </div>
+                <div class="flag-box">
+                  <button class="btn btn-outline btn-sm btn-resume-hint" style="border-color: var(--accent-cyan); color: #38bdf8;">
+                    🔒 Find Resume & Flag
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Hero Visual / Cyber Avatar -->
+            <div class="hero-visual">
+              <div class="avatar-wrapper">
+                <div class="avatar-glow-ring"></div>
+                <img src="assets/avatar.svg" alt="Mitsuha SnowAngel Cyber Avatar" class="avatar-image">
+                
+                <div class="floating-badge badge-appsec">
+                  <span style="color:#38bdf8;">🛡️</span>
+                  <span>AppSec & Red Team</span>
+                </div>
+
+                <div class="floating-badge badge-ctf">
+                  <span style="color:#22c55e;">🚩</span>
+                  <span>EnigmaX '26 #1</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Stats Ribbon -->
+          <div class="stats-ribbon">
+            <div class="stat-item">
+              <div class="stat-value">40+</div>
+              <div class="stat-label">Critical Disclosures</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-value">Top 1%</div>
+              <div class="stat-label">HackerOne & Bugcrowd</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-value">#1</div>
+              <div class="stat-label">EnigmaX CTF 2026</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-value">100%</div>
+              <div class="stat-label">Pure Static & Verified</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- About Section -->
+      <section id="about" class="about-section">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-tag"><span class="dot"></span> Dossier</div>
+            <h2 class="section-title">About Mitsuha SnowAngel</h2>
+            <p class="section-desc">Blending adversarial security mindsets with full-stack craftsmanship to build resilient software systems.</p>
+          </div>
+
+          <div class="about-grid">
+            <div class="about-card">
+              <h3>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 14 14"></polyline>
+                </svg>
+                Adversarial Journey & Vision
+              </h3>
+              <p class="about-text">
+                I am an Offensive Security Researcher and Application Security Engineer who operates under the handle <strong>@mitsuhasnowangel1</strong>. With over four years of targeted penetration testing and responsible disclosure, I specialize in unearthing novel attack surfaces in web ecosystems, cloud APIs, and microservice meshes.
+              </p>
+              <p class="about-text">
+                My approach unites attacker tradecraft with engineering empathy: true defense doesn't come from patchwork rules, but from understanding the root structural causes of flaws. When I'm not auditing production platforms or competing in international CTFs with team FrostByte, I author high-throughput open-source security tools.
+              </p>
+
+              <div class="key-traits">
+                <div class="trait-box">
+                  <div class="trait-title">Offensive Mindset</div>
+                  <div class="trait-desc">Specialized in deep business logic flaws, SSRF chains, and privilege escalations.</div>
+                </div>
+                <div class="trait-box">
+                  <div class="trait-title">Engineering Rigor</div>
+                  <div class="trait-desc">Proficient in Go, Rust, Python, and TypeScript to architect resilient protections.</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Security Clearance Dossier Card -->
+            <div class="dossier-card">
+              <div class="dossier-header">
+                <span>SECURITY_DOSSIER.json</span>
+                <span class="dossier-id">ID: 0xMS-2026-ENX</span>
+              </div>
+              <div class="dossier-body">
+                <div class="dossier-row">
+                  <span class="dossier-key">Handle</span>
+                  <span class="dossier-val">@mitsuhasnowangel1</span>
+                </div>
+                <div class="dossier-row">
+                  <span class="dossier-key">Aliases</span>
+                  <span class="dossier-val">Mitsuha, SnowAngel, FrostByte Captain</span>
+                </div>
+                <div class="dossier-row">
+                  <span class="dossier-key">Primary Focus</span>
+                  <span class="dossier-val">Application Security & Cloud Red Teaming</span>
+                </div>
+                <div class="dossier-row">
+                  <span class="dossier-key">Location</span>
+                  <span class="dossier-val">Tokyo / Remote Globally</span>
+                </div>
+                <div class="dossier-row">
+                  <span class="dossier-key">CTF Affiliation</span>
+                  <span class="dossier-val">Team FrostByte (Lead)</span>
+                </div>
+                <div class="dossier-row">
+                  <span class="dossier-key">Certifications</span>
+                  <span class="dossier-val">OSCP, eWPTXv2, CRTP</span>
+                </div>
+                <div class="dossier-row">
+                  <span class="dossier-key">Challenge Flag</span>
+                  <span class="dossier-val">
+                    <button class="btn-resume-hint" style="background:none; border:none; color:#38bdf8; font-family:var(--font-mono); font-size:0.85rem; cursor:pointer; text-decoration:underline;">
+                      🔒 Hidden in Resume (Click for Hint)
+                    </button>
+                  </span>
+                </div>
+                <div class="dossier-row">
+                  <span class="dossier-key">PGP Fingerprint</span>
+                  <span class="dossier-val"><code>3F8A 9D42 B1E6 74CA 890F</code></span>
+                </div>
+                <div class="dossier-row">
+                  <span class="dossier-key">Status</span>
+                  <span class="dossier-val" style="color:#22c55e;">● Available for Engagements</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Skills Matrix Section -->
+      <section id="skills" class="skills-section">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-tag"><span class="dot"></span> Capabilities</div>
+            <h2 class="section-title">Technical Expertise</h2>
+            <p class="section-desc">Comprehensive arsenal spanning offensive tradecraft, binary tools, and cloud hardening.</p>
+          </div>
+
+          <div class="skills-grid">
+            <div class="skill-category-card">
+              <div class="skill-cat-header">
+                <div class="skill-cat-icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polygon points="12 2 19 21 12 17 5 21 12 2"></polygon>
+                  </svg>
+                </div>
+                <h3 class="skill-cat-title">Offensive Security</h3>
+              </div>
+              <div class="skill-tags">
+                <span class="skill-tag">Web App Pentesting</span>
+                <span class="skill-tag">OWASP Top 10</span>
+                <span class="skill-tag">Blind SSRF</span>
+                <span class="skill-tag">IDOR Exploitation</span>
+                <span class="skill-tag">GraphQL Security</span>
+                <span class="skill-tag">OAuth / JWT Flaws</span>
+                <span class="skill-tag">Race Conditions</span>
+                <span class="skill-tag">Subdomain Takeovers</span>
+                <span class="skill-tag">Privilege Escalation</span>
+              </div>
+            </div>
+
+            <div class="skill-category-card">
+              <div class="skill-cat-header">
+                <div class="skill-cat-icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+                  </svg>
+                </div>
+                <h3 class="skill-cat-title">Security Tooling</h3>
+              </div>
+              <div class="skill-tags">
+                <span class="skill-tag">Burp Suite Pro</span>
+                <span class="skill-tag">Nuclei Engine</span>
+                <span class="skill-tag">OWASP ZAP</span>
+                <span class="skill-tag">Wireshark</span>
+                <span class="skill-tag">Nmap</span>
+                <span class="skill-tag">Metasploit</span>
+                <span class="skill-tag">Ghidra</span>
+                <span class="skill-tag">Frida</span>
+                <span class="skill-tag">Sqlmap</span>
+                <span class="skill-tag">Amass & Subfinder</span>
+                <span class="skill-tag">Hashcat</span>
+              </div>
+            </div>
+
+            <div class="skill-category-card">
+              <div class="skill-cat-header">
+                <div class="skill-cat-icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="16 18 22 12 16 6"></polyline>
+                    <polyline points="8 6 2 12 8 18"></polyline>
+                  </svg>
+                </div>
+                <h3 class="skill-cat-title">Languages & Systems</h3>
+              </div>
+              <div class="skill-tags">
+                <span class="skill-tag">Python 3</span>
+                <span class="skill-tag">Go (Golang)</span>
+                <span class="skill-tag">Rust</span>
+                <span class="skill-tag">TypeScript</span>
+                <span class="skill-tag">Bash / Zsh</span>
+                <span class="skill-tag">C / C++</span>
+                <span class="skill-tag">SQL</span>
+                <span class="skill-tag">HTML5 / CSS3</span>
+                <span class="skill-tag">Linux Kernel</span>
+                <span class="skill-tag">Git</span>
+              </div>
+            </div>
+
+            <div class="skill-category-card">
+              <div class="skill-cat-header">
+                <div class="skill-cat-icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+                    <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+                    <line x1="6" y1="6" x2="6.01" y2="6"></line>
+                    <line x1="6" y1="18" x2="6.01" y2="18"></line>
+                  </svg>
+                </div>
+                <h3 class="skill-cat-title">DevSecOps & Cloud</h3>
+              </div>
+              <div class="skill-tags">
+                <span class="skill-tag">CI/CD Pipeline Security</span>
+                <span class="skill-tag">Semgrep SAST</span>
+                <span class="skill-tag">Docker Container Security</span>
+                <span class="skill-tag">Kubernetes Hardening</span>
+                <span class="skill-tag">AWS IAM & GuardDuty</span>
+                <span class="skill-tag">GCP Security Command</span>
+                <span class="skill-tag">Cloudflare WAF</span>
+                <span class="skill-tag">Zero-Trust Architecture</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Featured Projects Section -->
+      <section id="projects" class="projects-section">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-tag"><span class="dot"></span> Open Source & Research</div>
+            <h2 class="section-title">Featured Security Tooling</h2>
+            <p class="section-desc">Innovative offensive frameworks and defense utilities built to automate vulnerability discovery.</p>
+          </div>
+
+          <div class="projects-grid">
+            <!-- Project 1 -->
+            <article class="project-card">
+              <div>
+                <div class="project-top">
+                  <span class="project-category">Reconnaissance Framework</span>
+                  <div class="project-links">
+                    <a href="https://github.com/mitsuhasnowangel1/snowangel-recon" class="project-link-icon" target="_blank" rel="noopener noreferrer" title="View Source on GitHub">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+                <h3 class="project-title">SnowAngel Recon Suite</h3>
+                <p class="project-desc">
+                  An ultra-fast asynchronous reconnaissance engine orchestrating certificate transparency streams, active DNS brute-forcing, HTTP port probing, and Nuclei workflow triggers.
+                </p>
+              </div>
+              <div class="project-tech">
+                <span class="tech-pill">Go</span>
+                <span class="tech-pill">Python</span>
+                <span class="tech-pill">Docker</span>
+                <span class="tech-pill">Nuclei</span>
+                <span class="tech-pill">Redis</span>
+              </div>
+            </article>
+
+            <!-- Project 2 -->
+            <article class="project-card">
+              <div>
+                <div class="project-top">
+                  <span class="project-category">Application Defense Proxy</span>
+                  <div class="project-links">
+                    <a href="https://github.com/mitsuhasnowangel1/kimi-guard" class="project-link-icon" target="_blank" rel="noopener noreferrer" title="View Source on GitHub">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+                <h3 class="project-title">Kimi-Guard WAF Engine</h3>
+                <p class="project-desc">
+                  High-performance inline API abuse mitigation reverse proxy. Employs AST-based SQL query parsing and behavioral rate-limiting compiled to WebAssembly with sub-millisecond latency.
+                </p>
+              </div>
+              <div class="project-tech">
+                <span class="tech-pill">Rust</span>
+                <span class="tech-pill">WebAssembly</span>
+                <span class="tech-pill">TypeScript</span>
+                <span class="tech-pill">Toxiproxy</span>
+              </div>
+            </article>
+
+            <!-- Project 3 -->
+            <article class="project-card">
+              <div>
+                <div class="project-top">
+                  <span class="project-category">Vulnerability Scanner</span>
+                  <div class="project-links">
+                    <a href="https://github.com/mitsuhasnowangel1/vulnradar" class="project-link-icon" target="_blank" rel="noopener noreferrer" title="View Source on GitHub">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+                <h3 class="project-title">VulnRadar Heuristic Engine</h3>
+                <p class="project-desc">
+                  Automated black-box auditing tool focusing on second-order vulnerabilities and blind out-of-band (OAST) interactions with automated proof-of-concept report generation.
+                </p>
+              </div>
+              <div class="project-tech">
+                <span class="tech-pill">Python</span>
+                <span class="tech-pill">FastAPI</span>
+                <span class="tech-pill">PostgreSQL</span>
+                <span class="tech-pill">Burp Extender</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTF & Flag Showcase Section -->
+      <section id="ctf" class="ctf-section">
+        <div class="container">
+          <div class="ctf-card-banner">
+            <div class="ctf-inner-grid">
+              <div>
+                <div class="section-tag" style="background:rgba(2,132,199,0.25);"><span class="dot"></span> EnigmaX CTF 2026 Champion</div>
+                <h2 class="ctf-title">Competitive CTF & Clearance Flag</h2>
+                <p class="ctf-desc">
+                  Ranked 1st place in the EnigmaX 2026 Security Invitational, outperforming 450+ international competitors. The official verification token awarded for this challenge is embedded directly inside Mitsuha's PDF resume.
+                </p>
+                <div style="display:flex; gap:1rem; flex-wrap:wrap;">
+                  <button class="btn btn-primary btn-resume-hint">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <circle cx="11" cy="11" r="8"></circle>
+                      <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                    Get Resume Search Hint
+                  </button>
+                  <a href="#resume" class="btn btn-outline">
+                    View Locked Resume Card
+                  </a>
+                </div>
+              </div>
+
+              <div class="ctf-flag-showcase">
+                <div class="flag-header-label">Official Challenge Flag</div>
+                <div class="flag-main-display btn-resume-hint" style="cursor:pointer;" title="Click for Hint">
+                  <span class="flag-string">🔒 ENX{...}</span>
+                  <span style="font-size:0.8rem; color:#7dd3fc; margin-left:0.5rem;">[Click for Hint]</span>
+                </div>
+                <div class="flag-explainer">
+                  Flag is embedded inside Mitsuha's PDF resume.<br>
+                  Click the button to reveal how to find it.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Resume Section -->
+      <section id="resume" class="resume-section">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-tag"><span class="dot"></span> Verified Credentials</div>
+            <h2 class="section-title">Official PDF Resume</h2>
+            <p class="section-desc">The candidate resume contains complete technical history, verified certifications, and the EnigmaX challenge flag.</p>
+          </div>
+
+          <div class="resume-container-box">
+            <div class="resume-details">
+              <h3>Professional Curriculum Vitae</h3>
+              <p>
+                This resume documents Mitsuha SnowAngel's experience as a Senior Application Security Engineer, independent bug hunter with top leaderboard rankings, and creator of open-source security frameworks.
+              </p>
+
+              <ul class="resume-features">
+                <li>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  <span>Contains Official Challenge Flag: <strong>ENX{...}</strong></span>
+                </li>
+                <li>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  <span>Standard ATS-compliant single-page A4 format</span>
+                </li>
+                <li>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  <span>Full vector text (selectable, searchable & printable)</span>
+                </li>
+                <li>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  <span>Includes OSCP, eWPTXv2, CRTP & CTF honors</span>
+                </li>
+              </ul>
+
+              <div class="resume-actions-group">
+                <button class="btn btn-primary btn-resume-hint">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+                  </svg>
+                  Download PDF Resume
+                </button>
+                <button class="btn btn-outline btn-resume-hint">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                  </svg>
+                  Get Search Hint
+                </button>
+              </div>
+            </div>
+
+            <!-- Resume Visual Preview Card (Protected / Locked with Hint Trigger) -->
+            <div class="resume-preview-card btn-resume-hint" style="cursor: pointer;" title="Click to reveal search hint">
+              <div class="resume-lock-overlay">
+                <div class="lock-icon">🔒</div>
+                <div class="lock-title">Direct Access Locked</div>
+                <div class="lock-subtitle">Click to reveal search hint</div>
+              </div>
+              <img src="assets/resume-preview.png" alt="Mitsuha SnowAngel Resume PDF Preview" class="locked-preview-img">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Interactive Cyber Terminal Section -->
+      <section id="terminal" class="terminal-section">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-tag"><span class="dot"></span> Interactive Shell</div>
+            <h2 class="section-title">SnowAngel Cyber Terminal</h2>
+            <p class="section-desc">Type commands to explore the environment, inspect security keys, or test commands.</p>
+          </div>
+
+          <div class="terminal-window">
+            <div class="terminal-titlebar">
+              <div class="terminal-buttons">
+                <span class="term-btn term-red"></span>
+                <span class="term-btn term-yellow"></span>
+                <span class="term-btn term-green"></span>
+              </div>
+              <div class="terminal-title">visitor@snowangel-box: ~ (zsh)</div>
+              <div></div>
+            </div>
+            <div class="terminal-content">
+              <div class="terminal-output" id="terminal-output">
+                <div>SnowAngel Cyber Shell v2.4.0 (pure-static-linux-gnu)</div>
+                <div style="color: #64748b; margin-bottom: 0.5rem;">Type <span style="color:#38bdf8;">help</span> to inspect commands, or <span style="color:#38bdf8;">resume</span> for the search hint.</div>
+              </div>
+              <div class="terminal-input-row">
+                <span class="terminal-prompt">visitor@snowangel:~$</span>
+                <input type="text" id="terminal-input" class="terminal-input" autofocus autocomplete="off" spellcheck="false" placeholder="type a command...">
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact & Transmit Section -->
+      <section id="contact" class="contact-section">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-tag"><span class="dot"></span> Communications</div>
+            <h2 class="section-title">Get in Touch</h2>
+            <p class="section-desc">Initiate encrypted correspondence for security consulting, private bug bounties, or red team contracts.</p>
+          </div>
+
+          <div class="contact-grid">
+            <div class="contact-info-card">
+              <h3>Secure Direct Channels</h3>
+              <p style="color: var(--text-muted); margin-bottom: 1.5rem;">
+                All communications are treated with strict confidentiality. PGP keys are available upon request or via public keyservers.
+              </p>
+
+              <div class="contact-channels">
+                <div class="channel-item">
+                  <div class="channel-icon">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                      <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="channel-label">Proton Mail</div>
+                    <a href="mailto:mitsuha.snowangel@proton.me" class="channel-val">mitsuha.snowangel@proton.me</a>
+                  </div>
+                </div>
+
+                <div class="channel-item">
+                  <div class="channel-icon">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="channel-label">GitHub</div>
+                    <a href="https://github.com/mitsuhasnowangel1" target="_blank" rel="noopener noreferrer" class="channel-val">github.com/mitsuhasnowangel1</a>
+                  </div>
+                </div>
+
+                <div class="channel-item">
+                  <div class="channel-icon">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                      <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="channel-label">PGP Key ID</div>
+                    <span class="channel-val" style="font-family: var(--font-mono); font-size: 0.85rem;">0x3F8A9D42B1E674CA</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="contact-form-card">
+              <form id="contact-form">
+                <div class="form-group">
+                  <label class="form-label" for="contact-name">Name / Alias</label>
+                  <input type="text" id="contact-name" class="form-control" placeholder="e.g. Satoshi / SecOps Lead" required>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="contact-email">Encrypted Return Address</label>
+                  <input type="email" id="contact-email" class="form-control" placeholder="your.name@domain.com" required>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="contact-msg">Transmission Content</label>
+                  <textarea id="contact-msg" class="form-control" placeholder="Describe scope, project timeline, or research topic..." required></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary" style="width: 100%;">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="22" y1="2" x2="11" y2="13"></line>
+                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                  </svg>
+                  Transmit Message
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="container footer-content">
+        <div class="footer-left">
+          <div class="footer-copy">© 2026 Mitsuha SnowAngel (@mitsuhasnowangel1). Pure Static Edition.</div>
+          <div class="footer-hash">AUTHENTICATION_STATUS: <code>🔒 ARCHIVED IN SEARCH INDEX</code></div>
+        </div>
+        <div>
+          <button class="btn btn-outline btn-sm btn-resume-hint">
+            📄 Find Resume PDF
+          </button>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Dedicated Resume Search Hint Modal -->
+  <div id="resume-hint-modal" class="modal-backdrop" role="dialog" aria-modal="true" aria-label="Resume Search Hint">
+    <div class="modal-container hint-modal-box">
+      <div class="modal-header">
+        <div style="display:flex; align-items:center; gap:0.6rem;">
+          <span style="font-size:1.2rem;">💡</span>
+          <strong style="color:#ffffff;">Resume Access Clue</strong>
+        </div>
+        <button id="hint-modal-close" class="modal-close-btn" aria-label="Close modal">&times;</button>
+      </div>
+      <div class="modal-body hint-modal-body">
+        <div class="hint-icon-badge">🔍</div>
+        <h3 class="hint-title">Looking for Mitsuha's Resume?</h3>
+        
+        <div class="hint-highlight-box">
+          use advanced google search to find my resume
+        </div>
+
+        <p class="hint-description">
+          The verified PDF resume containing the official flag is indexed across the web. Employ Google Dorking / advanced search operators to uncover the document.
+        </p>
+        
+        <div class="dork-example-box">
+          <span class="dork-label">Suggested Google Search Query:</span>
+          <div class="dork-code-row">
+            <code>filetype:pdf "mitsuhasnowangel1"</code>
+            <button id="btn-copy-dork" class="btn btn-sm btn-outline">Copy</button>
+          </div>
+        </div>
+
+        <div class="hint-modal-actions">
+          <a href="https://www.google.com/search?q=filetype%3Apdf+%22mitsuhasnowangel1%22" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            Search on Google
+          </a>
+          <button id="btn-copy-hint" class="btn btn-outline">
+            Copy Hint
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pure Static Interactive JavaScript -->
+  <script src="js/main.js"></script>
+</body>
+</html>
