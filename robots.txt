@@ -1,6 +1,5 @@
 User-agent: *
 Allow: /
 Allow: /resume.pdf
-Allow: /secret/flag.txt
 
 Sitemap: https://mitsuhasnowangel1.vercel.app/sitemap.xml
