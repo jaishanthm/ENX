@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initSnowCanvas();
   initTypewriter();
   initNavigation();
-  initResumeHint();
+  initResumeModal();
   initCyberTerminal();
   initContactForm();
 });
@@ -196,63 +196,41 @@ function initNavigation() {
 }
 
 /* ==========================================================================
-   4. Resume Click -> Advanced Google Search Hint Modal & Toast
+   4. Interactive Resume Fullscreen Modal
    ========================================================================== */
-function initResumeHint() {
-  const resumeTriggers = document.querySelectorAll(".btn-resume-hint");
-  const modal = document.getElementById("resume-hint-modal");
-  const closeBtn = document.getElementById("hint-modal-close");
-  const closeBtn2 = document.getElementById("hint-modal-close-btn");
-  const copyHintBtn = document.getElementById("btn-copy-hint");
+function initResumeModal() {
+  const openBtns = document.querySelectorAll(".btn-open-resume-modal");
+  const modal = document.getElementById("resume-modal");
+  const closeBtn = document.getElementById("modal-close");
 
-  const HINT_TEXT = "use advanced google search to find my resume";
+  if (!modal) return;
 
-  function openHintModal(e) {
+  function openModal(e) {
     if (e) e.preventDefault();
-    if (modal) {
-      modal.classList.add("active");
-      document.body.style.overflow = "hidden";
-    }
-    showToast("💡 Hint: use advanced google search to find my resume");
+    modal.classList.add("active");
+    document.body.style.overflow = "hidden";
   }
 
-  function closeHintModal() {
-    if (modal) {
-      modal.classList.remove("active");
-      document.body.style.overflow = "";
-    }
+  function closeModal() {
+    modal.classList.remove("active");
+    document.body.style.overflow = "";
   }
 
-  // Attach hint to all resume triggers
-  resumeTriggers.forEach((trigger) => {
-    trigger.addEventListener("click", openHintModal);
+  openBtns.forEach((btn) => {
+    btn.addEventListener("click", openModal);
   });
 
-  if (closeBtn) closeBtn.addEventListener("click", closeHintModal);
-  if (closeBtn2) closeBtn2.addEventListener("click", closeHintModal);
+  if (closeBtn) closeBtn.addEventListener("click", closeModal);
 
-  if (modal) {
-    modal.addEventListener("click", (e) => {
-      if (e.target === modal) closeHintModal();
-    });
-  }
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) closeModal();
+  });
 
   document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && modal && modal.classList.contains("active")) {
-      closeHintModal();
+    if (e.key === "Escape" && modal.classList.contains("active")) {
+      closeModal();
     }
   });
-
-  // Copy hint text
-  if (copyHintBtn) {
-    copyHintBtn.addEventListener("click", () => {
-      navigator.clipboard.writeText(HINT_TEXT).then(() => {
-        showToast("📋 Hint copied to clipboard!");
-      }).catch(() => {
-        showToast("💡 Hint: " + HINT_TEXT);
-      });
-    });
-  }
 }
 
 function showToast(message) {
@@ -298,15 +276,20 @@ Specialization: Web Exploitation, Reverse Engineering, DevSecOps
 CTF Team: FrostByte (Captain)
 Ranking: Top 1% HackerOne & Bugcrowd`,
 
-    resume: `[🔒] DIRECT ACCESS RESTRICTED: Resume is archived in the web index.
-[💡] HINT: use advanced google search to find my resume`,
+    resume: `[+] Official Resume available at: ./resume.pdf
+[★] Download or view the PDF resume to inspect the encoded verification token.`,
 
-    "cat resume": `[🔒] DIRECT ACCESS RESTRICTED: Resume is archived in the web index.
-[💡] HINT: use advanced google search to find my resume`,
+    "cat resume": `[+] Reading candidate resume: Mitsuha SnowAngel (@mitsuhasnowangel1)
+======================================================================
+ROLE:    Senior Application Security Engineer
+CLEARANCE TOKEN (Base64): RU5Ye1JlNXVNM30=
+======================================================================
+Decode with: echo "RU5Ye1JlNXVNM30=" | base64 -d
+Download PDF: ./resume.pdf`,
 
-    flag: `[🔒] Flag Status: ENCRYPTED IN RESUME.
-[💡] HINT: use advanced google search to find my resume
-[★] Once you obtain the PDF resume, extract the flag token inside!`,
+    flag: `[🔒] Flag Status: ENCODED IN RESUME (Base64).
+[★] Inspect the verification key inside resume.pdf and decode it:
+    echo "<TOKEN>" | base64 -d`,
 
     skills: `OFFENSIVE SECURITY:
   - OWASP Top 10, SSRF, IDOR, GraphQL & REST Exploitation

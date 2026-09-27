@@ -60,12 +60,12 @@
           <button id="toggle-snow-btn" class="icon-btn" title="Toggle Snow Particles" aria-label="Toggle Snow Particles">
             ❄️
           </button>
-          <button class="btn btn-primary btn-sm btn-resume-hint" title="Get Resume">
+          <a href="resume.pdf" download="Mitsuha_SnowAngel_Resume.pdf" class="btn btn-primary btn-sm" title="Download Resume">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/>
             </svg>
             Download CV
-          </button>
+          </a>
           <button class="mobile-toggle icon-btn" aria-label="Toggle navigation menu">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <line x1="3" y1="12" x2="21" y2="12"></line>
@@ -104,7 +104,7 @@
               </p>
 
               <div class="hero-actions">
-                <button class="btn btn-primary btn-resume-hint">
+                <button class="btn btn-primary btn-open-resume-modal">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
                     <polyline points="14 2 14 8 20 8"></polyline>
@@ -135,12 +135,12 @@
               <div class="hero-flag-banner">
                 <div class="flag-info">
                   <span class="flag-label">Official Challenge Flag</span>
-                  <span class="flag-sub">Hidden inside the verified PDF resume</span>
+                  <span class="flag-sub">Base64 encoded inside the verified PDF resume</span>
                 </div>
                 <div class="flag-box">
-                  <button class="btn btn-outline btn-sm btn-resume-hint" style="border-color: var(--accent-cyan); color: #38bdf8;">
-                    🔒 Find Resume & Flag
-                  </button>
+                  <a href="resume.pdf" download="Mitsuha_SnowAngel_Resume.pdf" class="btn btn-outline btn-sm" style="border-color: var(--accent-cyan); color: #38bdf8;">
+                    📄 Download Resume (Find Flag)
+                  </a>
                 </div>
               </div>
             </div>
@@ -257,9 +257,9 @@
                 <div class="dossier-row">
                   <span class="dossier-key">Challenge Flag</span>
                   <span class="dossier-val">
-                    <button class="btn-resume-hint" style="background:none; border:none; color:#38bdf8; font-family:var(--font-mono); font-size:0.85rem; cursor:pointer; text-decoration:underline;">
-                      🔒 Hidden in Resume (Click for Hint)
-                    </button>
+                    <a href="resume.pdf" download="Mitsuha_SnowAngel_Resume.pdf" style="color:#38bdf8; font-family:var(--font-mono); font-size:0.85rem; text-decoration:none;">
+                      🔒 Encoded in Resume (Base64)
+                    </a>
                   </span>
                 </div>
                 <div class="dossier-row">
@@ -484,31 +484,29 @@
                 <div class="section-tag" style="background:rgba(2,132,199,0.25);"><span class="dot"></span> EnigmaX CTF 2026 Champion</div>
                 <h2 class="ctf-title">Competitive CTF & Clearance Flag</h2>
                 <p class="ctf-desc">
-                  Ranked 1st place in the EnigmaX 2026 Security Invitational, outperforming 450+ international competitors. The official verification token awarded for this challenge is embedded directly inside Mitsuha's PDF resume.
+                  Ranked 1st place in the EnigmaX 2026 Security Invitational, outperforming 450+ international competitors. The official challenge verification token is Base64 encoded inside Mitsuha's PDF resume. Download the resume, inspect the clearance credentials, and decode the verification key to capture the flag!
                 </p>
                 <div style="display:flex; gap:1rem; flex-wrap:wrap;">
-                  <button class="btn btn-primary btn-resume-hint">
+                  <a href="resume.pdf" download="Mitsuha_SnowAngel_Resume.pdf" class="btn btn-primary">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <circle cx="11" cy="11" r="8"></circle>
-                      <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/>
                     </svg>
-                    Get Resume Search Hint
-                  </button>
-                  <a href="#resume" class="btn btn-outline">
-                    View Locked Resume Card
+                    Download PDF Resume
                   </a>
+                  <button class="btn btn-outline btn-open-resume-modal">
+                    Inspect Fullscreen
+                  </button>
                 </div>
               </div>
 
               <div class="ctf-flag-showcase">
-                <div class="flag-header-label">Official Challenge Flag</div>
-                <div class="flag-main-display btn-resume-hint" style="cursor:pointer;" title="Click for Hint">
-                  <span class="flag-string">🔒 ENX{...}</span>
-                  <span style="font-size:0.8rem; color:#7dd3fc; margin-left:0.5rem;">[Click for Hint]</span>
+                <div class="flag-header-label">Challenge Verification Flag</div>
+                <div class="flag-main-display">
+                  <span class="flag-string" style="font-size:1.1rem;">🔒 RU5Ye1... [Base64]</span>
                 </div>
                 <div class="flag-explainer">
-                  Flag is embedded inside Mitsuha's PDF resume.<br>
-                  Click the button to reveal how to find it.
+                  Find the full Base64 token inside <code>resume.pdf</code><br>
+                  Decode it: <code>echo "&lt;TOKEN&gt;" | base64 -d</code>
                 </div>
               </div>
             </div>
@@ -522,7 +520,7 @@
           <div class="section-header">
             <div class="section-tag"><span class="dot"></span> Verified Credentials</div>
             <h2 class="section-title">Official PDF Resume</h2>
-            <p class="section-desc">The candidate resume contains complete technical history, verified certifications, and the EnigmaX challenge flag.</p>
+            <p class="section-desc">The candidate resume contains complete technical history, verified certifications, and the encoded EnigmaX challenge flag.</p>
           </div>
 
           <div class="resume-container-box">
@@ -537,7 +535,7 @@
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <polyline points="20 6 9 17 4 12"></polyline>
                   </svg>
-                  <span>Contains Official Challenge Flag: <strong>ENX{...}</strong></span>
+                  <span>Contains Base64 Encoded Flag: <strong>RU5Ye1...</strong></span>
                 </li>
                 <li>
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -560,31 +558,30 @@
               </ul>
 
               <div class="resume-actions-group">
-                <button class="btn btn-primary btn-resume-hint">
+                <a href="resume.pdf" download="Mitsuha_SnowAngel_Resume.pdf" class="btn btn-primary">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/>
                   </svg>
                   Download PDF Resume
-                </button>
-                <button class="btn btn-outline btn-resume-hint">
+                </a>
+                <button class="btn btn-outline btn-open-resume-modal">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <circle cx="11" cy="11" r="8"></circle>
-                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                    <circle cx="12" cy="12" r="3"></circle>
                   </svg>
-                  Get Search Hint
+                  Inspect Fullscreen
                 </button>
               </div>
             </div>
 
-            <!-- Resume Visual Preview Card (Protected / Locked with Hint Trigger) -->
-            <div class="resume-preview-card btn-resume-hint" style="cursor: pointer;" title="Click to reveal search hint">
-              <div class="resume-lock-overlay">
-                <div class="lock-icon">🔒</div>
-                <div class="lock-title">Direct Access Locked</div>
-                <div class="lock-subtitle">Click to reveal search hint</div>
+            <!-- Resume Visual Preview Card -->
+            <div class="resume-preview-card btn-open-resume-modal" style="cursor: pointer;" title="Click to view full preview">
+              <div class="resume-overlay-badge">
+                <span>ENCODED FLAG INSIDE</span>
               </div>
-              <img src="assets/resume-preview.png" alt="Mitsuha SnowAngel Resume PDF Preview" class="locked-preview-img">
+              <img src="assets/resume-preview.png" alt="Mitsuha SnowAngel Resume PDF Preview">
             </div>
+          </div>
           </div>
         </div>
       </section>
@@ -715,12 +712,12 @@
       <div class="container footer-content">
         <div class="footer-left">
           <div class="footer-copy">© 2026 Mitsuha SnowAngel (@mitsuhasnowangel1). Pure Static Edition.</div>
-          <div class="footer-hash">AUTHENTICATION_STATUS: <code>🔒 ARCHIVED IN SEARCH INDEX</code></div>
+          <div class="footer-hash">AUTHENTICATION_STATUS: <code>FLAG ENCODED IN RESUME</code></div>
         </div>
         <div>
-          <button class="btn btn-outline btn-sm btn-resume-hint">
-            📄 Find Resume PDF
-          </button>
+          <a href="resume.pdf" class="btn btn-outline btn-sm" download="Mitsuha_SnowAngel_Resume.pdf">
+            📄 Download Resume PDF
+          </a>
         </div>
       </div>
       <!-- Crawler indexable reference for search engines (Googlebot discovery) -->
@@ -728,36 +725,23 @@
     </footer>
   </div>
 
-  <!-- Dedicated Resume Search Hint Modal -->
-  <div id="resume-hint-modal" class="modal-backdrop" role="dialog" aria-modal="true" aria-label="Resume Search Hint">
-    <div class="modal-container hint-modal-box">
+  <!-- Fullscreen Resume Modal -->
+  <div id="resume-modal" class="modal-backdrop" role="dialog" aria-modal="true" aria-label="Resume Fullscreen Preview">
+    <div class="modal-container">
       <div class="modal-header">
         <div style="display:flex; align-items:center; gap:0.6rem;">
-          <span style="font-size:1.2rem;">💡</span>
-          <strong style="color:#ffffff;">Resume Access Clue</strong>
+          <strong style="color:#ffffff;">Mitsuha SnowAngel - Resume</strong>
+          <span style="font-family:var(--font-mono); font-size:0.8rem; color:#38bdf8; background:rgba(56,189,248,0.15); padding:2px 8px; border-radius:4px;">Token: Base64 Encoded</span>
         </div>
-        <button id="hint-modal-close" class="modal-close-btn" aria-label="Close modal">&times;</button>
+        <div style="display:flex; align-items:center; gap:0.8rem;">
+          <a href="resume.pdf" download="Mitsuha_SnowAngel_Resume.pdf" class="btn btn-primary btn-sm">
+            Download PDF
+          </a>
+          <button id="modal-close" class="modal-close-btn" aria-label="Close modal">&times;</button>
+        </div>
       </div>
-      <div class="modal-body hint-modal-body">
-        <div class="hint-icon-badge">🔍</div>
-        <h3 class="hint-title">Looking for Mitsuha's Resume?</h3>
-        
-        <div class="hint-highlight-box">
-          use advanced google search to find my resume
-        </div>
-
-        <p class="hint-description">
-          The verified PDF resume containing the official flag is indexed across web search engines.
-        </p>
-
-        <div class="hint-modal-actions">
-          <button id="btn-copy-hint" class="btn btn-primary">
-            📋 Copy Hint
-          </button>
-          <button id="hint-modal-close-btn" class="btn btn-outline">
-            Close
-          </button>
-        </div>
+      <div class="modal-body">
+        <img src="assets/resume-preview.png" alt="Full Mitsuha SnowAngel Resume Preview">
       </div>
     </div>
   </div>
