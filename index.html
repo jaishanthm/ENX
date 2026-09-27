@@ -15,6 +15,10 @@
 
   <!-- Pure Static CSS Stylesheet -->
   <link rel="stylesheet" href="css/style.css">
+
+  <!-- Search Engine Discovery & Sitemap -->
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
+  <link rel="alternate" type="application/pdf" href="/resume.pdf" title="Mitsuha SnowAngel Resume PDF">
 </head>
 <body>
 
@@ -719,6 +723,8 @@
           </button>
         </div>
       </div>
+      <!-- Crawler indexable reference for search engines (Googlebot discovery) -->
+      <a href="/resume.pdf" class="visually-hidden-crawler" aria-hidden="true" tabindex="-1">Mitsuha SnowAngel Resume PDF Document</a>
     </footer>
   </div>
 
@@ -741,27 +747,15 @@
         </div>
 
         <p class="hint-description">
-          The verified PDF resume containing the official flag is indexed across the web. Employ Google Dorking / advanced search operators to uncover the document.
+          The verified PDF resume containing the official flag is indexed across web search engines.
         </p>
-        
-        <div class="dork-example-box">
-          <span class="dork-label">Suggested Google Search Query:</span>
-          <div class="dork-code-row">
-            <code>filetype:pdf "mitsuhasnowangel1"</code>
-            <button id="btn-copy-dork" class="btn btn-sm btn-outline">Copy</button>
-          </div>
-        </div>
 
         <div class="hint-modal-actions">
-          <a href="https://www.google.com/search?q=filetype%3Apdf+%22mitsuhasnowangel1%22" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <circle cx="11" cy="11" r="8"></circle>
-              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-            </svg>
-            Search on Google
-          </a>
-          <button id="btn-copy-hint" class="btn btn-outline">
-            Copy Hint
+          <button id="btn-copy-hint" class="btn btn-primary">
+            📋 Copy Hint
+          </button>
+          <button id="hint-modal-close-btn" class="btn btn-outline">
+            Close
           </button>
         </div>
       </div>

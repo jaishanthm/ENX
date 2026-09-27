@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Allow: /resume.pdf
+
+Sitemap: https://mitsuhasnowangel1.vercel.app/sitemap.xml

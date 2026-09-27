@@ -202,11 +202,10 @@ function initResumeHint() {
   const resumeTriggers = document.querySelectorAll(".btn-resume-hint");
   const modal = document.getElementById("resume-hint-modal");
   const closeBtn = document.getElementById("hint-modal-close");
+  const closeBtn2 = document.getElementById("hint-modal-close-btn");
   const copyHintBtn = document.getElementById("btn-copy-hint");
-  const copyDorkBtn = document.getElementById("btn-copy-dork");
 
   const HINT_TEXT = "use advanced google search to find my resume";
-  const DORK_QUERY = 'filetype:pdf "mitsuhasnowangel1"';
 
   function openHintModal(e) {
     if (e) e.preventDefault();
@@ -229,9 +228,8 @@ function initResumeHint() {
     trigger.addEventListener("click", openHintModal);
   });
 
-  if (closeBtn) {
-    closeBtn.addEventListener("click", closeHintModal);
-  }
+  if (closeBtn) closeBtn.addEventListener("click", closeHintModal);
+  if (closeBtn2) closeBtn2.addEventListener("click", closeHintModal);
 
   if (modal) {
     modal.addEventListener("click", (e) => {
@@ -252,17 +250,6 @@ function initResumeHint() {
         showToast("📋 Hint copied to clipboard!");
       }).catch(() => {
         showToast("💡 Hint: " + HINT_TEXT);
-      });
-    });
-  }
-
-  // Copy dork query
-  if (copyDorkBtn) {
-    copyDorkBtn.addEventListener("click", () => {
-      navigator.clipboard.writeText(DORK_QUERY).then(() => {
-        showToast("🔍 Query copied: " + DORK_QUERY);
-      }).catch(() => {
-        showToast("🔍 Query: " + DORK_QUERY);
       });
     });
   }
@@ -312,12 +299,10 @@ CTF Team: FrostByte (Captain)
 Ranking: Top 1% HackerOne & Bugcrowd`,
 
     resume: `[🔒] DIRECT ACCESS RESTRICTED: Resume is archived in the web index.
-[💡] HINT: use advanced google search to find my resume
-[🔍] Suggested query: filetype:pdf "mitsuhasnowangel1"`,
+[💡] HINT: use advanced google search to find my resume`,
 
     "cat resume": `[🔒] DIRECT ACCESS RESTRICTED: Resume is archived in the web index.
-[💡] HINT: use advanced google search to find my resume
-[🔍] Suggested query: filetype:pdf "mitsuhasnowangel1"`,
+[💡] HINT: use advanced google search to find my resume`,
 
     flag: `[🔒] Flag Status: ENCRYPTED IN RESUME.
 [💡] HINT: use advanced google search to find my resume
